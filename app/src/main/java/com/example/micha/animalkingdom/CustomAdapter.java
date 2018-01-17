@@ -59,16 +59,15 @@ public class CustomAdapter extends ArrayAdapter<Animal> {
                     weightV = convertView.findViewById(R.id.overWeight);
                     break;
             }
-        }
-
-        if (animal != null) {
-            if(name!=null&eat!=null&&hostile!=null&&weightV!=null){
+            if (animal != null) {
                 name.setText(animal.getName());
                 eat.setText(animal.getEat());
                 hostile.setText(animal.getHostile());
                 weightV.setText(animal.getWeight());
+
             }
         }
+
 
         return convertView;
     }
