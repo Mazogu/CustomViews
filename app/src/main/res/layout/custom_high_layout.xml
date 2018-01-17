@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/overlimit"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/overLimit"
+        android:id="@+id/overName"
+        android:text="Height"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/overEat"
+        style="@style/overLimit"
+        android:text="Name"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/overLimit"
+        android:text="Hostility"
+        android:id="@+id/overHostile"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="@style/overLimit"
+        android:id="@+id/overWeight"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height ="30dp"
+        android:textSize="10sp"
+        android:text="Sound"
+        android:onClick="makeSound"/>
+</LinearLayout>

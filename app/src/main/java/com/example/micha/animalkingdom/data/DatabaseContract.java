@@ -14,9 +14,9 @@ public class DatabaseContract {
     public static final String CREATE_BIRD_TABLE = "CREATE TABLE " + Animals.BIRDS + CREATE_STRING;
 
     public static class Animals{
-        public static final String CATS = "Cats";
-        public static final String SHARKS = "Sharks";
-        public static final String BIRDS = "Birds";
+        public static final String CATS = "Cat";
+        public static final String SHARKS = "Shark";
+        public static final String BIRDS = "Bird";
     }
 
     public static class Attributes{

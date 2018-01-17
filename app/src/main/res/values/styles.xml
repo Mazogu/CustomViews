@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="overLimit" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/limitBackgroud</item>
+        <item name="android:textColor">@color/limitText</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="limit" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/belowBackground</item>
+        <item name="android:textColor">@color/belowText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

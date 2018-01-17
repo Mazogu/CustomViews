@@ -1,14 +1,23 @@
 package com.example.micha.animalkingdom.data;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.micha.animalkingdom.Animal;
+import com.example.micha.animalkingdom.Bird;
+import com.example.micha.animalkingdom.Cat;
+import com.example.micha.animalkingdom.Shark;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by micha on 1/16/2018.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper{
+public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Animal Database";
     public static final int DATABASE_VERSION = 1;
 
@@ -56,5 +65,34 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public List<Animal> getList(String category) {
+        List<Animal> list = new ArrayList<>();
+        SQLiteDatabase base = getWritableDatabase();
+        Cursor cursor = base.rawQuery("SELECT * FROM " + category, null);
+        if (cursor.moveToFirst()) {
+
+            switch (category) {
+                case DatabaseContract.Animals.CATS:
+                    do {
+                        Animal animal = new Cat(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
+                        list.add(animal);
+                    } while (cursor.moveToNext());
+                    break;case DatabaseContract.Animals.SHARKS:
+                    do {
+                        Animal animal = new Shark(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
+                        list.add(animal);
+                    } while (cursor.moveToNext());
+                    break;case DatabaseContract.Animals.BIRDS:
+                    do {
+                        Animal animal = new Bird(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
+                        list.add(animal);
+                    } while (cursor.moveToNext());
+                    break;
+            }
+        }
+
+        return list;
     }
 }
