@@ -44,9 +44,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // TODO: 1/16/2018 Create and bind layout
     }
-    // TODO: 1/16/2018 Create other activity and layout, as well as adapter
-
 }
